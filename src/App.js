@@ -75,34 +75,43 @@ function App() {
    }, []);
 
    return (
-      <>
-         <button
-            onClick={() => {
-               setRunning(!running);
-               if (!running) {
-                  runningRef.current = true;
-                  simulate();
-               }
-            }}
-         >
-            {running ? 'stop' : 'start'}
-         </button>
-         <button onClick={() => setGrid(createEmptyGrid())}>clear</button>
-         <button
-            onClick={() => {
-               let rows = [];
-               for (let i = 0; i < numRows; i++) {
-                  rows.push(
-                     Array.from(Array(numCols), () =>
-                        Math.random() > 0.9 ? 1 : 0
-                     )
-                  );
-               }
-               setGrid(rows);
-            }}
-         >
-            random
-         </button>
+      <div className='container'>
+         <h1>Conway's Game of Life</h1>
+         <div className='button-wrapper'>
+            <a
+               href='https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life'
+               target='_blank'
+            >
+               about
+            </a>
+            <a
+               onClick={() => {
+                  setRunning(!running);
+                  if (!running) {
+                     runningRef.current = true;
+                     simulate();
+                  }
+               }}
+            >
+               {running ? 'stop' : 'start'}
+            </a>
+            <a onClick={() => setGrid(createEmptyGrid())}>clear</a>
+            <a
+               onClick={() => {
+                  let rows = [];
+                  for (let i = 0; i < numRows; i++) {
+                     rows.push(
+                        Array.from(Array(numCols), () =>
+                           Math.random() > 0.9 ? 1 : 0
+                        )
+                     );
+                  }
+                  setGrid(rows);
+               }}
+            >
+               random
+            </a>
+         </div>
 
          <div
             className='App'
@@ -131,7 +140,7 @@ function App() {
                ))
             )}
          </div>
-      </>
+      </div>
    );
 }
 
