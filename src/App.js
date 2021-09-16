@@ -79,6 +79,7 @@ function App() {
          <h1>Conway's Game of Life</h1>
          <div className='button-wrapper'>
             <a
+               style={{ color: 'white', textDecoration: 'none' }}
                href='https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life'
                target='_blank'
             >
@@ -123,6 +124,7 @@ function App() {
             {grid.map((rows, i) =>
                rows.map((cols, j) => (
                   <div
+                     className='cells'
                      key={`${i}-${j}`}
                      onClick={() => {
                         const newGrid = produce(grid, (newGrid) => {
@@ -133,8 +135,8 @@ function App() {
                      style={{
                         width: 20,
                         height: 20,
-                        background: grid[i][j] ? 'green' : undefined,
-                        border: 'solid 1px black',
+                        background: grid[i][j] ? 'white' : undefined,
+                        border: 'solid 1px blue',
                      }}
                   />
                ))
