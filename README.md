@@ -7,3 +7,7 @@
 ## run "yarn install" on look-up folder
 
 ### run "yarn start" and check out the app
+
+or
+
+#### go to https://ukesh-rajasekar.github.io/game-of-life/
