@@ -76,7 +76,10 @@ function App() {
 
    return (
       <div className='container'>
-         <h1>Conway's Game of Life</h1>
+         <div className='heading'>
+            <h1>Conway's Game of Life</h1>
+            <p>Select few cells and clik the start button</p>
+         </div>
          <div className='button-wrapper'>
             <a
                style={{ color: 'white', textDecoration: 'none' }}

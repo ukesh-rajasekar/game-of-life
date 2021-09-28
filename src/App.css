@@ -17,12 +17,28 @@ html {
    font-style: italic;
    font-size: large;
 }
+
+.heading {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
 h1 {
    font-style: italic;
    color: green;
    text-align: center;
 }
 
+p {
+   display: none;
+}
+
+h1:hover + p {
+   display: block;
+   color: green;
+   font-size: 20px;
+}
 a {
    cursor: pointer;
    margin: auto;
@@ -39,6 +55,7 @@ a {
    margin: auto;
    border-top: none;
    padding: 1rem;
+   flex-wrap: wrap;
 }
 
 @media only screen and (max-width: 800px) {
